@@ -6,7 +6,7 @@ RUN apk --update add \
     gcc \
     libc-dev \
     ffmpeg \
-    git 
+    git
 
 RUN python3 -m pip install --upgrade wheel
 # python3 -m pip install --upgrade yt-dlp

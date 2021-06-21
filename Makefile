@@ -1,5 +1,5 @@
 build:
-	docker build . -t phyzical/yt-dlc --no-cache
+	docker build . -t phyzical/yt-dlc
 push:
 	docker push phyzical/yt-dlc
 test-run:
@@ -8,4 +8,4 @@ test-run:
 	--compat-options no-youtube-unavailable-videos --sponsorblock \
 	-f bv*[ext=mp4]+ba[ext=m4a] --datebefore $(shell date -v-1m '+%Y%m%d') \
 	--write-auto-sub --cookies=cookies.txt --write-info-json --convert-subs=srt --sub-lang "en" \
-	--merge-output-format mp4 -o "./test/%(upload_date)s.%(title)s.%(ext)s" "https://www.youtube.com/playlist?list=PLek5s6oapyHJNlJs9XBwsUjYi9GnaNAQb"
+	--merge-output-format mp4 -o "./test/%(upload_date)s.%(title)s.%(ext)s" "https://www.youtube.com/watch?v=Dy312cUHumk"
