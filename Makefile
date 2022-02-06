@@ -1,5 +1,5 @@
 build:
-	docker build . -t phyzical/yt-dlp
+	docker build --platform linux/amd64 . -t phyzical/yt-dlp --no-cache
 push:
 	docker push phyzical/yt-dlp
 test-run:
@@ -8,5 +8,5 @@ test-run:
 	--newline --console-title \
 	--compat-options no-youtube-unavailable-videos --sponsorblock \
 	-f bv*[ext=mp4]+ba[ext=m4a] \
-	--write-auto-sub --cookies=cookies.txt --write-info-json --convert-subs=srt --sub-lang "en" \
+	--write-auto-sub --cookies cookies.txt --write-info-json --convert-subs=srt --sub-lang "en" \
 	--merge-output-format mp4 -o "./test/%(upload_date)s.%(title)s.%(ext)s" "https://www.youtube.com/watch?v=Dy312cUHumk"
