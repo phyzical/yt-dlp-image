@@ -6,12 +6,11 @@ RUN apk --update add \
     gcc \
     libc-dev \
     ffmpeg \
-    git
+    git \
+    g++
 
 RUN python3 -m pip install --upgrade wheel
 RUN python3 -m pip install --upgrade yt-dlp
-
-# RUN python3 -m pip install --upgrade git+https://github.com/nihil-admirari/yt-dlp.git@sponsor-block
 
 WORKDIR /workdir
 ENTRYPOINT [ "yt-dlp" ]
