@@ -10,8 +10,9 @@ RUN apk --update add \
     git \
     g++
 
-RUN python3 -m pip install --upgrade wheel
-RUN python3 -m pip install --upgrade yt-dlp
+RUN python3 -m pip install --break-system-packages --upgrade wheel
+RUN python3 -m pip install --break-system-packages --upgrade yt-dlp
+
 
 WORKDIR /workdir
 ENTRYPOINT [ "yt-dlp" ]
